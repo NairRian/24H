@@ -16,6 +16,17 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+st.markdown(
+    """
+    <style>
+    .stApp {
+        color: black;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 
 
 # --- Inputs utilisateur ---
