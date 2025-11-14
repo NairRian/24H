@@ -22,28 +22,10 @@ methode_extrac = st.selectbox(
     ["Levage", "Dragage", "Explosifs"]
 )
 
-# --- Bouton rouge centré via HTML ---
-submit_html = st.markdown("""
-    <div style="text-align: center;">
-        <form>
-            <input type="submit" value="Soumettre données" style="
-                background-color: red;
-                color: white;
-                font-size: 16px;
-                padding: 8px 20px;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-            ">
-        </form>
-    </div>
-""", unsafe_allow_html=True)
-
-# Vérifie si le bouton HTML est cliqué
-submit = st.session_state.get("submit_clicked", False)
-if st.button("Soumettre données (cache)"):  # bouton caché pour déclencher action
-    st.session_state["submit_clicked"] = True
-    submit = True
+# Créer trois colonnes pour centrer le bouton
+col1, col2, col3 = st.columns([1, 2, 1])
+with col2:
+    submit = st.button("Soumettre données", key="submit")
 
 # --- Affichage des résultats ---
 if submit:
