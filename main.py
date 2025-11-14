@@ -42,21 +42,21 @@ if submit:
 
     # Logique du choix d'image
     if volume_pierre < 60:
-        image = "no_pyramide.jpeg"
+        image = "no_pyramide.jpg"
     elif volume_pierre > 80:
-        image = "no_money.jpeg"
+        image = "no_money.jpg"
     else:
         if type_roche == "Granite":
-            image = "marteau_casse.jpeg"
+            image = "marteau_casse.jpg"
         elif type_roche == "Grès":
             image = "tas_de_sable.jpg"
         else:
             if methode_extrac == "Explosifs":
-                image = "carr_dest.jpeg"
+                image = "carr_dest.jpg"
             elif methode_extrac == "Dragage":
-                image = "pas_eau.jpeg"
+                image = "pas_eau.jpg"
             else:
-                image = "bravo.jpeg"
+                image = "bravo.jpg"
 
     # Affichage centré avec texte en gras
     st.markdown(f"<p style='text-align:center;'>Votre volume de pierre : <b>{volume_pierre}</b> milliers de m3</p>", unsafe_allow_html=True)
