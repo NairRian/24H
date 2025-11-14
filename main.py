@@ -54,9 +54,9 @@ if submit:
                 image = "bravo.jpg"
 
     # Affichage centré avec texte en gras
-    st.markdown(f"<p style='text-align:center;'>Volume de pierre : <b>{volume_pierre} milliers de m3</b></p>", unsafe_allow_html=True)
-    st.markdown(f"<p style='text-align:center;'>Type de roche choisi : <b>{type_roche}</b></p>", unsafe_allow_html=True)
-    st.markdown(f"<p style='text-align:center;'>Méthode d'extraction : <b>{methode_extrac}</b></p>", unsafe_allow_html=True)
+    #st.markdown(f"<p style='text-align:center;'>Volume de pierre : <b>{volume_pierre} milliers de m3</b></p>", unsafe_allow_html=True)
+    #st.markdown(f"<p style='text-align:center;'>Type de roche choisi : <b>{type_roche}</b></p>", unsafe_allow_html=True)
+    #st.markdown(f"<p style='text-align:center;'>Méthode d'extraction : <b>{methode_extrac}</b></p>", unsafe_allow_html=True)
 
     # Affichage image centrée
     img_path = os.path.join("model", image)
