@@ -42,7 +42,7 @@ if submit:
 
     # Logique du choix d'image
     if volume_pierre < 60:
-        image = "no_pyramide.jpg"
+        image = "no_pyramid.jpg"
     elif volume_pierre > 80:
         image = "no_money.jpg"
     else:
