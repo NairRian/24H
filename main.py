@@ -6,6 +6,17 @@ import os
 apptitle = "Construis ta pyramide !"
 st.set_page_config(page_title=apptitle, page_icon="🔺")
 st.title("Construis ta pyramide 🔺 !")
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #f5f5dc;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 
 # --- Inputs utilisateur ---
 volume_pierre = st.slider(
