@@ -67,3 +67,6 @@ if submit:
         st.pyplot(fig)
     else:
         st.warning(f"Image {image} introuvable dans le dossier 'model/'.")
+
+    if image != "bravo.jpg" :
+        st.markdown("<h2 style='text-align: center;'>-10points : Réessaie !</h2>", unsafe_allow_html=True)
