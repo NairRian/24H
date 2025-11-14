@@ -23,7 +23,7 @@ methode_extrac = st.selectbox(
 )
 
 # Créer trois colonnes pour centrer le bouton
-col1, col2, col3 = st.columns([1, 2, 1])
+col1, col2, col3 = st.columns([2, 2, 1])
 with col2:
     submit = st.button("Soumettre données", key="submit")
 
