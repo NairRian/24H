@@ -92,7 +92,11 @@ if submit:
     if image != "bravo.jpg" :
         st.markdown("<h2 style='text-align: center;'>-10 points : Recommence !</h2>", unsafe_allow_html=True)
     else :
-        st.markdown('<p style="text-align:center;"><a href="https://nairrian.github.io/24H/" target="_blank">Clique ici pour accéder à ta carte de compétences !</a></p>',
+        st.markdown(
+                '<p style="text-align:center; font-size:26px; font-weight:bold;">'
+                '<a href="https://nairrian.github.io/24H/" target="_blank" style="color:#d00000; text-decoration:none;">'
+                '👉 Clique ici pour accéder à ta carte de compétences ! 👈'
+                '</a></p>',
                 unsafe_allow_html=True
             )
 
