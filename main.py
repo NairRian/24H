@@ -8,21 +8,41 @@ st.set_page_config(page_title=apptitle, page_icon="🔺")
 st.title("Construis ta pyramide 🔺 !")
 
 # --- Inputs utilisateur ---
+
+# LABEL PERSONNALISÉ POUR LE SLIDER
+st.markdown("<p style='font-size:18px; font-weight:bold; text-align:center;'>"
+            "Quel volume de pierre pour construire l'extérieur de ta pyramide ? (en milliers de m3)"
+            "</p>", 
+            unsafe_allow_html=True)
+
 volume_pierre = st.slider(
-    f"Quel volume de pierre pour construire l'extérieur de ta pyramide ? (en milliers de m3)",
+    "",  # label retiré
     min_value=10,
     max_value=100,
     value=40
 )
 
 
+# LABEL PERSONNALISÉ POUR LA ROCHE
+st.markdown("<p style='font-size:18px; font-weight:bold; text-align:center;'>"
+            "Choisis le type de roche pour construire l'extérieur de ta pyramide"
+            "</p>", 
+            unsafe_allow_html=True)
+
 type_roche = st.selectbox(
-    "Choisis le type de roche pour construire l'extérieur de ta pyramide",
+    "",
     ["Granite", "Calcaire", "Grès"]
 )
 
+
+# LABEL PERSONNALISÉ POUR LA MÉTHODE D'EXTRACTION
+st.markdown("<p style='font-size:18px; font-weight:bold; text-align:center;'>"
+            "Choisis la méthode d'extraction"
+            "</p>", 
+            unsafe_allow_html=True)
+
 methode_extrac = st.selectbox(
-    "Choisis la méthode d'extraction",
+    "",
     ["Explosifs", "Levage", "Dragage"]
 )
 
@@ -72,6 +92,10 @@ if submit:
     if image != "bravo.jpg" :
         st.markdown("<h2 style='text-align: center;'>-10 points : Recommence !</h2>", unsafe_allow_html=True)
     else :
-        st.markdown('<p style="text-align:center;"><a href="https://nairrian.github.io/24H/" target="_blank">Clique ici pour accéder à ta carte de compétences !</a></p>',
-                unsafe_allow_html=True
-            )
+        st.markdown(
+                    '<p style="text-align:center; font-size:26px; font-weight:bold;">'
+                    '<a href="https://nairrian.github.io/24H/" target="_blank" style="color:#d00000; text-decoration:none;">'
+                    '👉 Clique ici pour accéder à ta carte de compétences ! 👈'
+                    '</a></p>',
+                    unsafe_allow_html=True
+                )
