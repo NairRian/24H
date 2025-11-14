@@ -6,7 +6,7 @@ st.title("Construis ta pyramide !")
 
 # --- Inputs utilisateur ---
 volume_pierre = st.slider(
-    f"Quel volume de pierre pour construire l'extérieur de ta pyramide ? (en milliers de m3)\n(min: 10, max: 100)",
+    f"Quel volume de pierre pour construire l'extérieur de ta pyramide ? (en milliers de m3)",
     min_value=10,
     max_value=100,
     value=40
