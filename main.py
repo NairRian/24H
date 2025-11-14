@@ -10,7 +10,7 @@ st.title("Construis ta pyramide 🔺 !")
 # --- Inputs utilisateur ---
 
 # LABEL PERSONNALISÉ POUR LE SLIDER
-st.markdown("<p style='font-size:16px; font-weight:bold; text-align:center;'>"
+st.markdown("<p style='font-size:18px; font-weight:bold; text-align:center;'>"
             "Quel volume de pierre pour construire l'extérieur de ta pyramide ? (en milliers de m3)"
             "</p>", 
             unsafe_allow_html=True)
@@ -24,7 +24,7 @@ volume_pierre = st.slider(
 
 
 # LABEL PERSONNALISÉ POUR LA ROCHE
-st.markdown("<p style='font-size:16px; font-weight:bold; text-align:center;'>"
+st.markdown("<p style='font-size:18px; font-weight:bold; text-align:center;'>"
             "Choisis le type de roche pour construire l'extérieur de ta pyramide"
             "</p>", 
             unsafe_allow_html=True)
@@ -36,7 +36,7 @@ type_roche = st.selectbox(
 
 
 # LABEL PERSONNALISÉ POUR LA MÉTHODE D'EXTRACTION
-st.markdown("<p style='font-size:16px; font-weight:bold; text-align:center;'>"
+st.markdown("<p style='font-size:18px; font-weight:bold; text-align:center;'>"
             "Choisis la méthode d'extraction"
             "</p>", 
             unsafe_allow_html=True)
