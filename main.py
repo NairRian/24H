@@ -49,11 +49,22 @@ methode_extrac = st.selectbox(
 # Créer trois colonnes pour centrer le bouton
 col1, col2, col3 = st.columns([2, 2, 1])
 with col2:
-    submit = st.button("Soumettre données", key="submit")
+            submit = st.button("Soumettre données", key="submit")
+            if submit:
+                        st.markdown(
+                                """
+                                <script>
+                                    document.getElementById('resultats').scrollIntoView({behavior: 'smooth'});
+                                </script>
+                                """,
+                                unsafe_allow_html=True
+                            )
+
 
 # --- Affichage des résultats ---
 if submit:
-    st.markdown("<h2 style='text-align: center;'>Résultats de ta pyramide</h2>", unsafe_allow_html=True)
+            st.markdown("<div id='resultats'></div>", unsafe_allow_html=True)
+            st.markdown("<h2 style='text-align: center;'>Résultats de ta pyramide</h2>", unsafe_allow_html=True)
 
     # Logique du choix d'image
     if volume_pierre < 60:
