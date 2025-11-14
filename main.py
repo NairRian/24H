@@ -53,49 +53,46 @@ with col2:
 
 # --- Affichage des résultats ---
 if submit:
-    st.markdown("<h2 style='text-align: center;'>Résultats de ta pyramide</h2>", unsafe_allow_html=True)
+    with st.modal("Résultats de ta pyramide 🔺"):
 
-    # Logique du choix d'image
-    if volume_pierre < 60:
-        image = "no_pyramid.jpg"
-    elif volume_pierre > 80:
-        image = "no_money.jpg"
-    else:
-        if type_roche == "Granite":
-            image = "marteau_casse.jpg"
-        elif type_roche == "Grès":
-            image = "tas_de_sable.jpg"
+        # Logique du choix d'image
+        if volume_pierre < 60:
+            image = "no_pyramid.jpg"
+        elif volume_pierre > 80:
+            image = "no_money.jpg"
         else:
-            if methode_extrac == "Explosifs":
-                image = "carr_dest.jpg"
-            elif methode_extrac == "Dragage":
-                image = "pas_eau.jpg"
+            if type_roche == "Granite":
+                image = "marteau_casse.jpg"
+            elif type_roche == "Grès":
+                image = "tas_de_sable.jpg"
             else:
-                image = "bravo.jpg"
+                if methode_extrac == "Explosifs":
+                    image = "carr_dest.jpg"
+                elif methode_extrac == "Dragage":
+                    image = "pas_eau.jpg"
+                else:
+                    image = "bravo.jpg"
 
-    # Affichage centré avec texte en gras
-    #st.markdown(f"<p style='text-align:center;'>Volume de pierre : <b>{volume_pierre} milliers de m3</b></p>", unsafe_allow_html=True)
-    #st.markdown(f"<p style='text-align:center;'>Type de roche choisi : <b>{type_roche}</b></p>", unsafe_allow_html=True)
-    #st.markdown(f"<p style='text-align:center;'>Méthode d'extraction : <b>{methode_extrac}</b></p>", unsafe_allow_html=True)
+        # IMAGE
+        img_path = os.path.join("model", image)
+        if os.path.exists(img_path):
+            fig, ax = plt.subplots()
+            img = plt.imread(img_path)
+            ax.imshow(img)
+            ax.axis("off")
+            st.pyplot(fig)
+        else:
+            st.warning(f"Image {image} introuvable dans le dossier 'model/'.")
 
-    # Affichage image centrée
-    img_path = os.path.join("model", image)
-    if os.path.exists(img_path):
-        fig, ax = plt.subplots()
-        img = plt.imread(img_path)
-        ax.imshow(img)
-        ax.axis("off")
-        st.pyplot(fig)
-    else:
-        st.warning(f"Image {image} introuvable dans le dossier 'model/'.")
-
-    if image != "bravo.jpg" :
-        st.markdown("<h2 style='text-align: center;'>-10 points : Recommence !</h2>", unsafe_allow_html=True)
-    else :
-        st.markdown(
-                    '<p style="text-align:center; font-size:26px; font-weight:bold;">'
-                    '<a href="https://nairrian.github.io/24H/" target="_blank" style="color:#d00000; text-decoration:none;">'
-                    '👉 Clique ici pour accéder à ta carte de compétences ! 👈'
-                    '</a></p>',
-                    unsafe_allow_html=True
-                )
+        # TEXTE DE FIN
+        if image != "bravo.jpg":
+            st.markdown("<h3 style='text-align:center; color:red;'>-10 points : Recommence !</h3>",
+                        unsafe_allow_html=True)
+        else:
+            st.markdown(
+                '<p class="big-link" style="text-align:center; margin-top: 20px;">'
+                '<a href="https://nairrian.github.io/24H/" target="_blank">'
+                'Clique ici pour accéder à ta carte de compétences !'
+                '</a></p>',
+                unsafe_allow_html=True
+            )
