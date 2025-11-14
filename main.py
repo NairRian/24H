@@ -22,35 +22,37 @@ methode_extrac = st.selectbox(
     ["Levage", "Dragage", "Explosifs"]
 )
 
-# --- Logique du choix d'image ---
-if volume_pierre < 60:
-    image = "no_pyramid.jpg"
-elif volume_pierre > 80:
-    image = "no_money.jpg"
-else:
-    if type_roche == "Granite":
-        image = "marteau_casse.jpg"
-    elif type_roche == "Grès":
-        image = "tas_de_sable.jpg"
+# --- Bouton pour déclencher le calcul ---
+if st.button("Soumettre données"):
+    # --- Logique du choix d'image ---
+    if volume_pierre < 60:
+        image = "no_pyramide.jpeg"
+    elif volume_pierre > 80:
+        image = "no_money.jpeg"
     else:
-        if methode_extrac == "Explosifs":
-            image = "carr_dest.jpg"
-        elif methode_extrac == "Dragage":
-            image = "pas_eau.jpg"
+        if type_roche == "Granite":
+            image = "marteau_casse.jpeg"
+        elif type_roche == "Grès":
+            image = "tas_de_sable.jpg"
         else:
-            image = "bravo.jpg"
+            if methode_extrac == "Explosifs":
+                image = "carr_dest.jpeg"
+            elif methode_extrac == "Dragage":
+                image = "pas_eau.jpeg"
+            else:
+                image = "bravo.jpeg"
 
-# --- Affichage des résultats ---
-st.write(f"Votre volume de pierre : {volume_pierre} milliers de m3")
-st.write(f"Type de roche choisi : {type_roche}")
-st.write(f"Méthode d'extraction : {methode_extrac}")
+    # --- Affichage des résultats ---
+    st.write(f"Votre volume de pierre : {volume_pierre} milliers de m3")
+    st.write(f"Type de roche choisi : {type_roche}")
+    st.write(f"Méthode d'extraction : {methode_extrac}")
 
-# Vérifier que l'image existe
-img_path = os.path.join("model", image)
-if os.path.exists(img_path):
-    img = plt.imread(img_path)
-    plt.imshow(img)
-    plt.axis("off")
-    st.pyplot(plt)
-else:
-    st.warning(f"Image {image} introuvable dans le dossier 'model/'.")
+    # --- Affichage de l'image ---
+    img_path = os.path.join("model", image)
+    if os.path.exists(img_path):
+        img = plt.imread(img_path)
+        plt.imshow(img)
+        plt.axis("off")
+        st.pyplot(plt)
+    else:
+        st.warning(f"Image {image} introuvable dans le dossier 'model/'.")
