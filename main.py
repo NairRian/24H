@@ -53,7 +53,8 @@ with col2:
 
 # --- Affichage des résultats ---
 if submit:
-    with st.modal("Résultats de ta pyramide 🔺"):
+    # Expander pour afficher les résultats dans une mini-fenêtre
+    with st.expander("Résultats de ta pyramide 🔺", expanded=True):
 
         # Logique du choix d'image
         if volume_pierre < 60:
@@ -73,7 +74,7 @@ if submit:
                 else:
                     image = "bravo.jpg"
 
-        # IMAGE
+        # Affichage image
         img_path = os.path.join("model", image)
         if os.path.exists(img_path):
             fig, ax = plt.subplots()
@@ -84,10 +85,12 @@ if submit:
         else:
             st.warning(f"Image {image} introuvable dans le dossier 'model/'.")
 
-        # TEXTE DE FIN
+        # Texte de fin et lien
         if image != "bravo.jpg":
-            st.markdown("<h3 style='text-align:center; color:red;'>-10 points : Recommence !</h3>",
-                        unsafe_allow_html=True)
+            st.markdown(
+                "<h3 style='text-align:center; color:red;'>-10 points : Recommence !</h3>",
+                unsafe_allow_html=True
+            )
         else:
             st.markdown(
                 '<p class="big-link" style="text-align:center; margin-top: 20px;">'
