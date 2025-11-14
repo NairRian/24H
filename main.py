@@ -24,21 +24,21 @@ methode_extrac = st.selectbox(
 
 # --- Logique du choix d'image ---
 if volume_pierre < 60:
-    image = "no_pyramide.jpeg"
+    image = "no_pyramid.jpg"
 elif volume_pierre > 80:
-    image = "no_money.jpeg"
+    image = "no_money.jpg"
 else:
     if type_roche == "Granite":
-        image = "marteau_casse.jpeg"
+        image = "marteau_casse.jpg"
     elif type_roche == "Grès":
         image = "tas_de_sable.jpg"
     else:
         if methode_extrac == "Explosifs":
-            image = "carr_dest.jpeg"
+            image = "carr_dest.jpg"
         elif methode_extrac == "Dragage":
-            image = "pas_eau.jpeg"
+            image = "pas_eau.jpg"
         else:
-            image = "bravo.jpeg"
+            image = "bravo.jpg"
 
 # --- Affichage des résultats ---
 st.write(f"Votre volume de pierre : {volume_pierre} milliers de m3")
