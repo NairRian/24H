@@ -30,12 +30,16 @@ st.markdown(
 
 
 # --- Inputs utilisateur ---
+"""
 volume_pierre = st.slider(
     f"Quel volume de pierre pour construire l'extérieur de ta pyramide ? (en milliers de m3)",
     min_value=10,
     max_value=100,
     value=40
 )
+"""
+st.markdown("<p style='color:black; font-weight:bold;'>Quel volume de pierre ? (10-100)</p>", unsafe_allow_html=True)
+volume_pierre = st.slider("", min_value=10, max_value=100, value=40) 
 
 type_roche = st.selectbox(
     "Choisis le type de roche pour construire l'extérieur de ta pyramide",
