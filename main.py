@@ -2,7 +2,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import os
 
-st.title("Construis ta pyramide !")
+st.title("Construis ta pyramide 🔺 !")
 
 # --- Inputs utilisateur ---
 volume_pierre = st.slider(
@@ -19,7 +19,7 @@ type_roche = st.selectbox(
 
 methode_extrac = st.selectbox(
     "Choisis la méthode d'extraction",
-    ["Levage", "Dragage", "Explosifs"]
+    ["Explosifs", "Levage", "Dragage"]
 )
 
 # Créer trois colonnes pour centrer le bouton
