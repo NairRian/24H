@@ -2,6 +2,9 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import os
 
+# configurer la page
+apptitle = "Construis ta pyramide !"
+st.set_page_config(page_title=apptitle, page_icon="🔺")
 st.title("Construis ta pyramide 🔺 !")
 
 # --- Inputs utilisateur ---
