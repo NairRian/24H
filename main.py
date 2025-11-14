@@ -29,7 +29,7 @@ with col2:
 
 # --- Affichage des résultats ---
 if submit:
-    st.markdown("## Résultats de ta pyramide")
+    st.markdown("<h2 style='text-align: center;'>Résultats de ta pyramide</h2>", unsafe_allow_html=True)
 
     # Logique du choix d'image
     if volume_pierre < 60:
@@ -50,7 +50,7 @@ if submit:
                 image = "bravo.jpg"
 
     # Affichage centré avec texte en gras
-    st.markdown(f"<p style='text-align:center;'>Votre volume de pierre : <b>{volume_pierre} milliers de m3</b></p>", unsafe_allow_html=True)
+    st.markdown(f"<p style='text-align:center;'>Volume de pierre : <b>{volume_pierre} milliers de m3</b></p>", unsafe_allow_html=True)
     st.markdown(f"<p style='text-align:center;'>Type de roche choisi : <b>{type_roche}</b></p>", unsafe_allow_html=True)
     st.markdown(f"<p style='text-align:center;'>Méthode d'extraction : <b>{methode_extrac}</b></p>", unsafe_allow_html=True)
 
